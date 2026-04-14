@@ -1,0 +1,16 @@
+{
+	"name": "Andrej Knezevic — Bauingenieurbüro",
+	"short_name": "AK Bau",
+	"description": "Bauingenieurbüro für Tragwerksplanung, Bauleitung und Projektsteuerung.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#F7F5F2",
+	"theme_color": "#0C1A2E",
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	]
+}

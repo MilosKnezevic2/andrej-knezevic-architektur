@@ -5,7 +5,9 @@
       "Bash(rm -rf \"C:/Users/kneze/OneDrive/Desktop/Projekti/andrej-temp\")",
       "Bash(npm install:*)",
       "Bash(npx @biomejs/biome init)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(\"/c/Program Files/GitHub CLI/gh\" repo create MilosKnezevic2/andrej-knezevic-architektur --public --source=. --push)",
+      "Bash(npm run:*)"
     ]
   }
 }

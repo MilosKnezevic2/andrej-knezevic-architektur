@@ -67,8 +67,36 @@ const fullTitle = title === 'Home'
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
 
-		<!-- Preconnect (for any external resources) -->
-		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<!-- Structured Data — Organization -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "Andrej Knezevic Bauingenieurbüro",
+			"description": "Bauingenieurbüro für Tragwerksplanung, Bauleitung und Projektsteuerung in Österreich.",
+			"url": "https://andrejknezevic.at",
+			"telephone": "+436677712038",
+			"email": "office@andrejknezevic.at",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Am Gewerbepark 8",
+				"addressLocality": "St. Stefan im Lavanttal",
+				"postalCode": "9431",
+				"addressCountry": "AT"
+			},
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+				"opens": "07:00",
+				"closes": "15:00"
+			},
+			"founder": {
+				"@type": "Person",
+				"name": "Andrej Knezevic",
+				"jobTitle": "Dipl.-Ing. Bauingenieur"
+			},
+			"areaServed": "AT",
+			"priceRange": "$$"
+		})} />
 	</head>
 
 	<body>
