@@ -60,9 +60,10 @@ const navLinks = [
 
 	<!-- Mobile menu -->
 	<div class="header__mobile" id="mobile-menu" aria-hidden="true">
-		<nav aria-label="Mobile Navigation">
+		<nav aria-label="Mobile Navigation" class="header__mobile-nav">
+			<span class="header__mobile-eyebrow">Navigation</span>
 			<ul class="header__mobile-list" role="list">
-				{navLinks.map((link) => (
+				{navLinks.map((link, i) => (
 					<li>
 						<a
 							href={link.href}
@@ -72,14 +73,22 @@ const navLinks = [
 							]}
 							aria-current={currentPath === link.href ? 'page' : undefined}
 						>
+							<span class="header__mobile-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
 							{link.label}
 						</a>
 					</li>
 				))}
 			</ul>
-			<a href="/kontakt" class="header__mobile-cta">
-				Projekt anfragen
-			</a>
+			<div class="header__mobile-bottom">
+				<a href="/kontakt" class="header__mobile-cta">
+					Projekt anfragen
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+				</a>
+				<div class="header__mobile-contact">
+					<a href="tel:+436677712038" class="header__mobile-phone">+43 667 771 2038</a>
+					<a href="mailto:office@andrejknezevic.at" class="header__mobile-email">office@andrejknezevic.at</a>
+				</div>
+			</div>
 		</nav>
 	</div>
 </header>
@@ -252,6 +261,10 @@ const navLinks = [
 		transform-origin: center;
 	}
 
+	.header__burger[aria-expanded="true"] .header__burger-line {
+		background: var(--color-navy);
+	}
+
 	.header__burger[aria-expanded="true"] .header__burger-line:nth-child(1) {
 		transform: translateY(7px) rotate(45deg);
 	}
@@ -273,8 +286,8 @@ const navLinks = [
 		height: calc(100vh - 80px);
 		height: calc(100dvh - 80px);
 		z-index: 999;
-		background: var(--color-white);
-		padding: var(--space-8) var(--section-x);
+		background: var(--color-navy);
+		padding: 0;
 		transform: translateX(100%);
 		transition: transform var(--transition-slow);
 		overflow-y: auto;
@@ -290,34 +303,78 @@ const navLinks = [
 		}
 	}
 
+	.header__mobile-nav {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		padding: var(--space-8) var(--section-x) var(--space-8);
+	}
+
+	.header__mobile-eyebrow {
+		display: block;
+		font-family: var(--font-body);
+		font-size: 0.65rem;
+		font-weight: 600;
+		letter-spacing: 0.25em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.25);
+		margin-bottom: var(--space-6);
+	}
+
 	.header__mobile-list {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-2);
+		gap: 0;
 	}
 
 	.header__mobile-link {
-		display: block;
-		padding: var(--space-4) 0;
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		padding: var(--space-5) 0;
 		font-family: var(--font-heading);
-		font-size: var(--text-2xl);
+		font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
 		font-weight: 600;
-		color: var(--color-navy);
-		border-bottom: 1px solid var(--color-border);
-		transition: color var(--transition-fast);
+		color: var(--color-white);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		transition: color var(--transition-fast), padding-left var(--transition-base);
+	}
+
+	.header__mobile-link:hover {
+		color: var(--color-brass-light);
+		padding-left: var(--space-2);
 	}
 
 	.header__mobile-link.is-active {
 		color: var(--color-brass);
 	}
 
-	.header__mobile-link:hover {
+	.header__mobile-number {
+		font-family: var(--font-body);
+		font-size: var(--text-xs);
+		font-weight: 600;
+		color: rgba(var(--color-brass-rgb), 0.4);
+		min-width: 24px;
+	}
+
+	.header__mobile-link.is-active .header__mobile-number {
 		color: var(--color-brass);
+	}
+
+	/* Bottom area */
+	.header__mobile-bottom {
+		margin-top: auto;
+		padding-top: var(--space-8);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-6);
 	}
 
 	.header__mobile-cta {
 		display: inline-flex;
-		margin-top: var(--space-8);
+		align-items: center;
+		justify-content: center;
+		gap: var(--space-2);
 		padding: var(--space-4) var(--space-8);
 		background: var(--color-brass);
 		color: var(--color-navy);
@@ -325,9 +382,32 @@ const navLinks = [
 		font-size: var(--text-base);
 		font-weight: 600;
 		border-radius: var(--radius-sm);
-		text-align: center;
 		width: 100%;
-		justify-content: center;
+		transition: background var(--transition-fast);
+	}
+
+	.header__mobile-cta:hover {
+		background: var(--color-brass-dark);
+	}
+
+	.header__mobile-contact {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		padding-bottom: var(--space-4);
+	}
+
+	.header__mobile-phone,
+	.header__mobile-email {
+		font-size: var(--text-sm);
+		color: rgba(255, 255, 255, 0.35);
+		font-weight: 500;
+		transition: color var(--transition-fast);
+	}
+
+	.header__mobile-phone:hover,
+	.header__mobile-email:hover {
+		color: var(--color-brass-light);
 	}
 </style>
 
