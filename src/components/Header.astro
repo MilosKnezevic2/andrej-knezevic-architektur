@@ -1,0 +1,379 @@
+---
+interface Props {
+	currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const navLinks = [
+	{ href: '/', label: 'Home' },
+	{ href: '/leistungen', label: 'Leistungen' },
+	{ href: '/projekte', label: 'Projekte' },
+	{ href: '/ueber-uns', label: 'Über uns' },
+	{ href: '/kontakt', label: 'Kontakt' },
+];
+---
+
+<header class="header" id="header">
+	<div class="header__inner container--wide">
+		<a href="/" class="header__logo" aria-label="Andrej Knezevic — Startseite">
+			<span class="header__logo-text">ANDREJ</span>
+			<span class="header__logo-accent">KNEZEVIC</span>
+		</a>
+
+		<nav class="header__nav" aria-label="Hauptnavigation">
+			<ul class="header__nav-list" role="list">
+				{navLinks.map((link) => (
+					<li>
+						<a
+							href={link.href}
+							class:list={[
+								'header__nav-link',
+								{ 'is-active': currentPath === link.href }
+							]}
+							aria-current={currentPath === link.href ? 'page' : undefined}
+						>
+							{link.label}
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+
+		<a href="/kontakt" class="header__cta">
+			Projekt anfragen
+		</a>
+
+		<!-- Mobile menu button -->
+		<button
+			class="header__burger"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+			aria-label="Menü öffnen"
+			type="button"
+		>
+			<span class="header__burger-line" aria-hidden="true"></span>
+			<span class="header__burger-line" aria-hidden="true"></span>
+			<span class="header__burger-line" aria-hidden="true"></span>
+		</button>
+	</div>
+
+	<!-- Mobile menu -->
+	<div class="header__mobile" id="mobile-menu" aria-hidden="true">
+		<nav aria-label="Mobile Navigation">
+			<ul class="header__mobile-list" role="list">
+				{navLinks.map((link) => (
+					<li>
+						<a
+							href={link.href}
+							class:list={[
+								'header__mobile-link',
+								{ 'is-active': currentPath === link.href }
+							]}
+							aria-current={currentPath === link.href ? 'page' : undefined}
+						>
+							{link.label}
+						</a>
+					</li>
+				))}
+			</ul>
+			<a href="/kontakt" class="header__mobile-cta">
+				Projekt anfragen
+			</a>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: var(--z-sticky);
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border-bottom: 1px solid transparent;
+		transition:
+			background var(--transition-base),
+			border-color var(--transition-base),
+			box-shadow var(--transition-base);
+	}
+
+	.header.is-scrolled {
+		border-bottom-color: var(--color-border);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.header__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 80px;
+		padding-inline: var(--section-x);
+		max-width: var(--container-wide);
+		margin-inline: auto;
+	}
+
+	/* ── Logo ── */
+	.header__logo {
+		display: flex;
+		gap: var(--space-2);
+		font-family: var(--font-heading);
+		font-size: 1.125rem;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		transition: opacity var(--transition-fast);
+	}
+
+	.header__logo:hover {
+		opacity: 0.8;
+	}
+
+	.header__logo-text {
+		color: var(--color-navy);
+	}
+
+	.header__logo-accent {
+		color: var(--color-brass);
+	}
+
+	/* ── Desktop Nav ── */
+	.header__nav {
+		display: none;
+	}
+
+	@media (min-width: 1024px) {
+		.header__nav {
+			display: block;
+		}
+	}
+
+	.header__nav-list {
+		display: flex;
+		gap: var(--space-8);
+	}
+
+	.header__nav-link {
+		position: relative;
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		color: var(--color-charcoal);
+		letter-spacing: 0.02em;
+		padding-block: var(--space-2);
+		transition: color var(--transition-fast);
+	}
+
+	.header__nav-link::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: var(--color-brass);
+		transition: width var(--transition-base);
+	}
+
+	.header__nav-link:hover,
+	.header__nav-link.is-active {
+		color: var(--color-navy);
+	}
+
+	.header__nav-link:hover::after,
+	.header__nav-link.is-active::after {
+		width: 100%;
+	}
+
+	.header__nav-link.is-active {
+		font-weight: 600;
+	}
+
+	/* ── CTA Button ── */
+	.header__cta {
+		display: none;
+		padding: var(--space-3) var(--space-6);
+		background: var(--color-navy);
+		color: var(--color-white);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		border-radius: var(--radius-sm);
+		transition:
+			background var(--transition-fast),
+			transform var(--transition-fast);
+	}
+
+	.header__cta:hover {
+		background: var(--color-navy-light);
+		transform: translateY(-1px);
+	}
+
+	.header__cta:active {
+		transform: translateY(0) scale(0.98);
+	}
+
+	@media (min-width: 1024px) {
+		.header__cta {
+			display: inline-flex;
+		}
+	}
+
+	/* ── Burger ── */
+	.header__burger {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 5px;
+		width: 44px;
+		height: 44px;
+		padding: 10px;
+	}
+
+	@media (min-width: 1024px) {
+		.header__burger {
+			display: none;
+		}
+	}
+
+	.header__burger-line {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background: var(--color-navy);
+		border-radius: 2px;
+		transition:
+			transform var(--transition-base),
+			opacity var(--transition-fast);
+		transform-origin: center;
+	}
+
+	.header__burger[aria-expanded="true"] .header__burger-line:nth-child(1) {
+		transform: translateY(7px) rotate(45deg);
+	}
+
+	.header__burger[aria-expanded="true"] .header__burger-line:nth-child(2) {
+		opacity: 0;
+	}
+
+	.header__burger[aria-expanded="true"] .header__burger-line:nth-child(3) {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+
+	/* ── Mobile Menu ── */
+	.header__mobile {
+		position: fixed;
+		top: 80px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: var(--z-overlay);
+		background: var(--color-white);
+		padding: var(--space-8) var(--section-x);
+		transform: translateX(100%);
+		transition: transform var(--transition-slow);
+		overflow-y: auto;
+	}
+
+	.header__mobile[aria-hidden="false"] {
+		transform: translateX(0);
+	}
+
+	@media (min-width: 1024px) {
+		.header__mobile {
+			display: none;
+		}
+	}
+
+	.header__mobile-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+
+	.header__mobile-link {
+		display: block;
+		padding: var(--space-4) 0;
+		font-family: var(--font-heading);
+		font-size: var(--text-2xl);
+		font-weight: 600;
+		color: var(--color-navy);
+		border-bottom: 1px solid var(--color-border);
+		transition: color var(--transition-fast);
+	}
+
+	.header__mobile-link.is-active {
+		color: var(--color-brass);
+	}
+
+	.header__mobile-link:hover {
+		color: var(--color-brass);
+	}
+
+	.header__mobile-cta {
+		display: inline-flex;
+		margin-top: var(--space-8);
+		padding: var(--space-4) var(--space-8);
+		background: var(--color-brass);
+		color: var(--color-navy);
+		font-family: var(--font-body);
+		font-size: var(--text-base);
+		font-weight: 600;
+		border-radius: var(--radius-sm);
+		text-align: center;
+		width: 100%;
+		justify-content: center;
+	}
+</style>
+
+<script>
+	// Scroll behavior — add shadow on scroll
+	const header = document.getElementById('header');
+	if (header) {
+		const onScroll = () => {
+			header.classList.toggle('is-scrolled', window.scrollY > 20);
+		};
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	}
+
+	// Mobile menu toggle
+	const burger = document.querySelector('.header__burger');
+	const mobileMenu = document.getElementById('mobile-menu');
+
+	if (burger && mobileMenu) {
+		burger.addEventListener('click', () => {
+			const isOpen = burger.getAttribute('aria-expanded') === 'true';
+			burger.setAttribute('aria-expanded', String(!isOpen));
+			burger.setAttribute('aria-label', isOpen ? 'Menü öffnen' : 'Menü schließen');
+			mobileMenu.setAttribute('aria-hidden', String(isOpen));
+			document.body.style.overflow = isOpen ? '' : 'hidden';
+		});
+
+		// Close menu on link click
+		const mobileLinks = mobileMenu.querySelectorAll('a');
+		for (const link of mobileLinks) {
+			link.addEventListener('click', () => {
+				burger.setAttribute('aria-expanded', 'false');
+				burger.setAttribute('aria-label', 'Menü öffnen');
+				mobileMenu.setAttribute('aria-hidden', 'true');
+				document.body.style.overflow = '';
+			});
+		}
+
+		// Close on Escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
+				burger.setAttribute('aria-expanded', 'false');
+				burger.setAttribute('aria-label', 'Menü öffnen');
+				mobileMenu.setAttribute('aria-hidden', 'true');
+				document.body.style.overflow = '';
+				burger.focus();
+			}
+		});
+	}
+</script>

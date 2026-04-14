@@ -1,0 +1,129 @@
+[
+	{
+		"slug": "wohnanlage-sonnenberg",
+		"title": "Wohnanlage Sonnenberg",
+		"category": "Neubau",
+		"subcategory": "Wohnbau",
+		"location": "Klagenfurt am Wörthersee",
+		"year": "2024",
+		"client": "Sonnenberg Wohnbau GmbH",
+		"area": "3.200 m²",
+		"duration": "14 Monate",
+		"services": ["Tragwerksplanung", "Einreichplanung", "Ausführungsplanung", "Bauleitung"],
+		"heroImage": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=700&fit=crop",
+		"images": [
+			"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=500&fit=crop"
+		],
+		"challenge": "Auf einem Hanggrundstück mit schwierigen Bodenverhältnissen sollte eine Wohnanlage mit 24 Einheiten entstehen. Die besondere Herausforderung lag in der Kombination aus Hangsicherung, Tiefgarage und den strengen Schallschutzanforderungen des Wohnbaus. Der enge Bauzeitplan erforderte eine parallele Planung und Ausführung der einzelnen Bauabschnitte.",
+		"solution": "Wir entwickelten ein Tragwerkskonzept auf Basis von Stahlbeton-Flachdecken mit optimierter Bewehrungsführung, das maximale Flexibilität bei der Grundrissgestaltung ermöglichte. Die Hangsicherung wurde als rückverankerte Bohrpfahlwand ausgeführt. Durch den Einsatz von BIM-gestützter Planung konnten Kollisionen frühzeitig erkannt und die Koordination mit den Fachplanern deutlich beschleunigt werden.",
+		"result": "Das Projekt wurde termingerecht und innerhalb des Budgets fertiggestellt. Die optimierte Tragwerksplanung führte zu einer Materialeinsparung von 12% gegenüber dem ursprünglichen Entwurf. Alle 24 Wohneinheiten wurden innerhalb von drei Monaten nach Fertigstellung verkauft."
+	},
+	{
+		"slug": "buerogebaeude-techpark-villach",
+		"title": "Bürogebäude TechPark Villach",
+		"category": "Gewerbe",
+		"subcategory": "Bürobau",
+		"location": "Villach",
+		"year": "2023",
+		"client": "TechPark Villach Errichtungs GmbH",
+		"area": "4.800 m²",
+		"duration": "18 Monate",
+		"services": ["Tragwerksplanung", "Ausführungsplanung", "Bauleitung"],
+		"heroImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=700&fit=crop",
+		"images": [
+			"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=500&fit=crop"
+		],
+		"challenge": "Ein modernes, viergeschossiges Bürogebäude mit flexiblen Grundrissen, großen Spannweiten und einer repräsentativen Glasfassade. Die Anforderung: stützenfreie Büroflächen von bis zu 12 Metern Spannweite bei gleichzeitig minimaler Deckenstärke, um die lichte Raumhöhe zu maximieren.",
+		"solution": "Die Lösung war ein Flachdeckensystem mit Hohlkörpern (Cobiax), das die Eigenlasten um 30% reduzierte und Spannweiten bis 12,5 m ohne Unterzüge ermöglichte. Das Stahlbeton-Skelett wurde so konzipiert, dass spätere Nutzungsänderungen ohne konstruktive Eingriffe möglich sind. Die Fassade wurde als vorgehängte Pfosten-Riegel-Konstruktion in Stahl-Glas ausgeführt.",
+		"result": "Die Kombination aus Hohlkörperdecken und optimierter Stützenstellung ermöglichte eine Reduzierung der Betonmenge um 28% gegenüber konventioneller Bauweise. Das Gebäude erhielt eine Zertifizierung nach klimaaktiv Bronze und wurde von der Wirtschaftskammer als vorbildliches Gewerbeprojekt ausgezeichnet."
+	},
+	{
+		"slug": "altbau-sanierung-graz",
+		"title": "Altbau Gründerzeit — Generalsanierung",
+		"category": "Sanierung",
+		"subcategory": "Wohnbau",
+		"location": "Graz, Innere Stadt",
+		"year": "2023",
+		"client": "Privater Eigentümer",
+		"area": "1.800 m²",
+		"duration": "10 Monate",
+		"services": ["Tragwerksplanung", "Einreichplanung", "Bauleitung", "Energieausweis"],
+		"heroImage": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=700&fit=crop",
+		"images": [
+			"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=500&fit=crop"
+		],
+		"challenge": "Ein denkmalgeschütztes Gründerzeitgebäude aus 1892 sollte generalsaniert und um ein Dachgeschoss erweitert werden. Der historische Bestand — Ziegelmauerwerk mit Holzbalkendecken — musste ertüchtigt werden, ohne die denkmalgeschützte Fassade und die charakteristischen Stuckelemente zu beeinträchtigen. Zusätzlich waren die Fundamente für die zusätzliche Last des Dachgeschossausbaus nicht ausgelegt.",
+		"solution": "Nach einer detaillierten Bestandsaufnahme mit zerstörungsfreien Prüfverfahren entwickelten wir ein Verstärkungskonzept: Die Holzbalkendecken wurden durch Stahlbeton-Verbunddecken ersetzt, die bestehenden Mauerwerkswände mit Kohlefaserlamellen ertüchtigt. Für den Dachgeschossausbau wählten wir eine leichte Stahlkonstruktion, die das Eigengewicht um 40% gegenüber Massivbau reduzierte. Die Fundamente wurden mittels Mikropfählen verstärkt.",
+		"result": "Die Sanierung wurde im bewohnten Zustand durchgeführt — ein logistisches Meisterstück. Der Energieausweis verbesserte sich von HWB 180 auf HWB 42 kWh/m²a. Die Gesamtkosten lagen 8% unter dem ursprünglichen Kostenvoranschlag, und der Denkmalschutz bestätigte die fachgerechte Erhaltung aller schützenswerten Elemente."
+	},
+	{
+		"slug": "einfamilienhaus-woerthersee",
+		"title": "Villa am Wörthersee",
+		"category": "Neubau",
+		"subcategory": "Wohnbau",
+		"location": "Pörtschach am Wörthersee",
+		"year": "2024",
+		"client": "Privater Bauherr",
+		"area": "420 m²",
+		"duration": "8 Monate",
+		"services": ["Tragwerksplanung", "Einreichplanung", "Ausführungsplanung"],
+		"heroImage": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&h=700&fit=crop",
+		"images": [
+			"https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=500&fit=crop"
+		],
+		"challenge": "Eine repräsentative Villa direkt am Wörthersee — der Entwurf des Architekten sah große, bodentiefe Verglasungen, auskragende Terrassen und ein begrüntes Flachdach vor. Die Hanglage zum See und der hohe Grundwasserspiegel stellten besondere Anforderungen an die Gründung und die Abdichtung.",
+		"solution": "Die Tragstruktur wurde als Kombination aus Stahlbeton-Wänden und Stahlrahmen konzipiert, um die großen Glasflächen und die bis zu 4 Meter auskragenden Terrassen zu realisieren. Die Gründung erfolgte auf einer wasserundurchlässigen Stahlbetonplatte (WU-Beton). Die Statik der Auskragungen wurde durch vorgespannte Deckenplatten gelöst, die ein Minimum an sichtbaren Trägern erfordern.",
+		"result": "Die Villa verbindet architektonischen Anspruch mit technischer Präzision. Die auskragenden Terrassen — ein Highlight des Entwurfs — konnten ohne sichtbare Stützen realisiert werden. Der Bauherr und der Architekt bestätigten: Die Zusammenarbeit war geprägt von Professionalität und Lösungsorientierung."
+	},
+	{
+		"slug": "produktionshalle-mueller",
+		"title": "Produktionshalle Müller GmbH",
+		"category": "Gewerbe",
+		"subcategory": "Industriebau",
+		"location": "Linz",
+		"year": "2022",
+		"client": "Müller Metalltechnik GmbH",
+		"area": "6.500 m²",
+		"duration": "12 Monate",
+		"services": ["Tragwerksplanung", "Ausführungsplanung", "Bauleitung"],
+		"heroImage": "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200&h=700&fit=crop",
+		"images": [
+			"https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=500&fit=crop"
+		],
+		"challenge": "Eine neue Produktionshalle mit 25 Metern Spannweite, integriertem Kranbahn-System (Tragfähigkeit 10 Tonnen) und angeschlossenem Bürotrakt. Die Halle musste in nur 8 Monaten betriebsbereit sein — ein extrem enger Zeitplan für ein Projekt dieser Größenordnung.",
+		"solution": "Wir entschieden uns für eine vorgefertigte Stahlkonstruktion mit gevouteten Rahmen, die vor Ort in nur 6 Wochen montiert wurde. Die Kranbahn wurde als eigenständiges Tragwerk in die Hallenstruktur integriert, um Schwingungen von der Gebäudehülle zu entkoppeln. Der Bürotrakt wurde in Stahlbeton-Skelettbauweise errichtet und über eine thermisch getrennte Fuge an die Halle angeschlossen.",
+		"result": "Die Halle wurde 3 Wochen vor dem geplanten Termin fertiggestellt. Die Stahlkonstruktion ermöglichte eine parallele Ausführung von Fundament und Hallenbau, was den Zeitplan erheblich verkürzte. Die Kranbahnanlage läuft seit Inbetriebnahme störungsfrei."
+	},
+	{
+		"slug": "dachgeschossausbau-wien",
+		"title": "Dachgeschossausbau Wien",
+		"category": "Sanierung",
+		"subcategory": "Wohnbau",
+		"location": "Wien, 7. Bezirk",
+		"year": "2024",
+		"client": "Immobilien Invest Wien AG",
+		"area": "850 m²",
+		"duration": "9 Monate",
+		"services": ["Tragwerksplanung", "Einreichplanung", "Ausführungsplanung", "Bauleitung"],
+		"heroImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=700&fit=crop",
+		"images": [
+			"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=500&fit=crop",
+			"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=500&fit=crop"
+		],
+		"challenge": "Ein typisches Wiener Gründerzeithaus im 7. Bezirk sollte um zwei Dachgeschosse erweitert werden — 6 hochwertige Eigentumswohnungen mit großzügigen Terrassen und Panoramablick. Die Herausforderung: Das bestehende Mauerwerk (Ziegel, 130 Jahre alt) musste die zusätzlichen Lasten aufnehmen, ohne dass die Fundamente verstärkt werden konnten — eine U-Bahn-Linie verläuft direkt darunter.",
+		"solution": "Die Lösung war eine ultraleichte Stahl-Holz-Hybridkonstruktion für die beiden neuen Geschosse, die das Eigengewicht um 60% gegenüber konventionellem Massivbau reduzierte. Die Lastabtragung wurde über die bestehenden tragenden Wände geführt, wobei Lastverteilungsträger die Kräfte gleichmäßig in das historische Mauerwerk einleiten. Alle schweren Bauteile wurden per Kran in vorgefertigten Elementen montiert — die Rohbauzeit betrug nur 4 Wochen.",
+		"result": "Der Ausbau wurde ohne Schäden am Bestand und ohne Beschwerden der Bestandsmieter abgeschlossen. Die 6 Wohnungen wurden zu Premium-Preisen verkauft. Das Projekt wurde als Referenz bei der MA 37 (Wiener Baupolizei) für vorbildliche Dachgeschossausbauten aufgenommen."
+	}
+]

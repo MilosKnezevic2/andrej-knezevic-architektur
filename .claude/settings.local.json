@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp -r \"C:/Users/kneze/OneDrive/Desktop/Projekti/andrej-temp/\"* \"C:/Users/kneze/OneDrive/Desktop/Projekti/andrej-temp/\".* \"C:/Users/kneze/OneDrive/Desktop/Projekti/Andrej Knezevic Architektur/\")",
+      "Bash(rm -rf \"C:/Users/kneze/OneDrive/Desktop/Projekti/andrej-temp\")",
+      "Bash(npm install:*)",
+      "Bash(npx @biomejs/biome init)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+---
+const currentYear = new Date().getFullYear();
+
+const services = [
+	{ label: 'Tragwerksplanung', href: '/leistungen#tragwerksplanung' },
+	{ label: 'Einreichplanung', href: '/leistungen#einreichplanung' },
+	{ label: 'Ausführungsplanung', href: '/leistungen#ausfuehrungsplanung' },
+	{ label: 'Bauleitung', href: '/leistungen#bauleitung' },
+	{ label: 'Energieausweis', href: '/leistungen#energieausweis' },
+	{ label: 'Sanierung & Umbau', href: '/leistungen#sanierung' },
+];
+
+const quickLinks = [
+	{ label: 'Projekte', href: '/projekte' },
+	{ label: 'Über uns', href: '/ueber-uns' },
+	{ label: 'Kontakt', href: '/kontakt' },
+	{ label: 'Impressum', href: '/impressum' },
+	{ label: 'Datenschutz', href: '/datenschutz' },
+];
+---
+
+<footer class="footer">
+	<!-- Top accent line -->
+	<div class="footer__accent" aria-hidden="true"></div>
+
+	<div class="footer__inner container">
+		<div class="footer__grid">
+			<!-- Column 1: Brand + Description -->
+			<div class="footer__brand">
+				<a href="/" class="footer__logo" aria-label="Andrej Knezevic — Startseite">
+					<span class="footer__logo-text">ANDREJ</span>
+					<span class="footer__logo-accent">KNEZEVIC</span>
+				</a>
+				<p class="footer__tagline">
+					Bauingenieurbüro für Tragwerksplanung, Bauleitung und Projektsteuerung.
+					Präzise Planung — sichere Umsetzung.
+				</p>
+			</div>
+
+			<!-- Column 2: Leistungen -->
+			<div class="footer__col">
+				<h3 class="footer__heading">Leistungen</h3>
+				<ul class="footer__list" role="list">
+					{services.map((item) => (
+						<li>
+							<a href={item.href} class="footer__link">{item.label}</a>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<!-- Column 3: Quick Links -->
+			<div class="footer__col">
+				<h3 class="footer__heading">Navigation</h3>
+				<ul class="footer__list" role="list">
+					{quickLinks.map((item) => (
+						<li>
+							<a href={item.href} class="footer__link">{item.label}</a>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<!-- Column 4: Kontakt -->
+			<div class="footer__col">
+				<h3 class="footer__heading">Kontakt</h3>
+				<address class="footer__address">
+					<p>Am Gewerbepark 8</p>
+					<p>9431 St. Stefan im Lavanttal</p>
+					<p class="footer__contact-gap">
+						<a href="tel:+436677712038" class="footer__link">+43 667 771 2038</a>
+					</p>
+					<p>
+						<a href="mailto:office@andrejknezevic.at" class="footer__link">office@andrejknezevic.at</a>
+					</p>
+					<p class="footer__contact-gap footer__hours">
+						<span>Mo – Fr: 07:00 – 15:00</span>
+					</p>
+				</address>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bottom bar -->
+	<div class="footer__bottom">
+		<div class="container">
+			<p class="footer__copyright">
+				&copy; {currentYear} Andrej Knezevic Bauingenieurbüro. Alle Rechte vorbehalten.
+			</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background: var(--color-navy);
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.footer__accent {
+		height: 3px;
+		background: linear-gradient(
+			90deg,
+			var(--color-brass) 0%,
+			var(--color-brass-light) 50%,
+			var(--color-brass) 100%
+		);
+	}
+
+	.footer__inner {
+		padding-block: var(--space-16) var(--space-12);
+	}
+
+	.footer__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-10);
+	}
+
+	@media (min-width: 768px) {
+		.footer__grid {
+			grid-template-columns: 1.5fr 1fr 1fr;
+			gap: var(--space-12);
+		}
+
+		.footer__brand {
+			grid-column: 1 / -1;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.footer__grid {
+			grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+			gap: var(--space-16);
+		}
+
+		.footer__brand {
+			grid-column: auto;
+		}
+	}
+
+	/* ── Brand ── */
+	.footer__logo {
+		display: flex;
+		gap: var(--space-2);
+		font-family: var(--font-heading);
+		font-size: 1.125rem;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		margin-bottom: var(--space-4);
+	}
+
+	.footer__logo-text {
+		color: var(--color-white);
+	}
+
+	.footer__logo-accent {
+		color: var(--color-brass);
+	}
+
+	.footer__tagline {
+		font-size: var(--text-sm);
+		line-height: 1.7;
+		max-width: 300px;
+	}
+
+	/* ── Columns ── */
+	.footer__heading {
+		font-family: var(--font-heading);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--color-white);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		margin-bottom: var(--space-4);
+	}
+
+	.footer__list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.footer__link {
+		font-size: var(--text-sm);
+		transition: color var(--transition-fast);
+		font-style: normal;
+	}
+
+	.footer__link:hover {
+		color: var(--color-brass-light);
+	}
+
+	/* ── Address ── */
+	.footer__address {
+		font-style: normal;
+		font-size: var(--text-sm);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.footer__contact-gap {
+		margin-top: var(--space-3);
+	}
+
+	.footer__hours {
+		color: rgba(255, 255, 255, 0.5);
+		font-size: var(--text-xs);
+	}
+
+	/* ── Bottom Bar ── */
+	.footer__bottom {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		padding-block: var(--space-6);
+	}
+
+	.footer__copyright {
+		font-size: var(--text-xs);
+		color: rgba(255, 255, 255, 0.4);
+		text-align: center;
+	}
+</style>

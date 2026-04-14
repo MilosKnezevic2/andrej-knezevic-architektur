@@ -1,0 +1,319 @@
+/* ================================================================
+   ANDREJ KNEZEVIC — BAUINGENIEURBÜRO
+   Design System & Global Styles
+   ================================================================ */
+
+/* ── Reset ─────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	scroll-behavior: smooth;
+	hanging-punctuation: first last;
+}
+
+body {
+	min-height: 100dvh;
+	line-height: 1.6;
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	color: var(--color-charcoal);
+	background-color: var(--color-warm-white);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	font-style: italic;
+	background-repeat: no-repeat;
+	background-size: cover;
+	shape-margin: 0.75rem;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+	text-wrap: balance;
+	font-family: var(--font-heading);
+	font-weight: 600;
+	line-height: 1.15;
+	color: var(--color-navy);
+}
+
+p {
+	overflow-wrap: break-word;
+	text-wrap: pretty;
+}
+
+/* Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ── Design Tokens ─────────────────────────────────────────────── */
+:root {
+	/* Colors — Primary */
+	--color-navy: #0C1A2E;
+	--color-navy-light: #122642;
+	--color-navy-rgb: 12, 26, 46;
+
+	/* Colors — Accent */
+	--color-brass: #B8934B;
+	--color-brass-light: #CCAD76;
+	--color-brass-dark: #9A7A3D;
+	--color-brass-rgb: 184, 147, 75;
+
+	/* Colors — Background */
+	--color-warm-white: #F7F5F2;
+	--color-white: #FFFFFF;
+
+	/* Colors — Text */
+	--color-charcoal: #2D2D2D;
+	--color-muted: #787878;
+	--color-light-text: #B0B0B0;
+
+	/* Colors — Surface */
+	--color-concrete: #E8E4DF;
+	--color-surface: #F0EEEB;
+	--color-border: #D7D2CB;
+
+	/* Colors — Utility */
+	--color-success: #2EA043;
+	--color-error: #CF3434;
+	--color-focus: #4A90D9;
+
+	/* Typography */
+	--font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+	--font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+	/* Font Sizes — Fluid */
+	--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);    /* 12-13px */
+	--text-sm: clamp(0.8125rem, 0.75rem + 0.3vw, 0.875rem);   /* 13-14px */
+	--text-base: clamp(0.9375rem, 0.875rem + 0.3vw, 1rem);    /* 15-16px */
+	--text-lg: clamp(1.0625rem, 0.95rem + 0.5vw, 1.25rem);    /* 17-20px */
+	--text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);       /* 20-24px */
+	--text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);        /* 24-32px */
+	--text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);            /* 32-48px */
+	--text-4xl: clamp(2.5rem, 1.75rem + 3.75vw, 3.75rem);     /* 40-60px */
+	--text-5xl: clamp(3rem, 2rem + 5vw, 4.5rem);              /* 48-72px */
+
+	/* Spacing — 4px base scale */
+	--space-1: 0.25rem;   /* 4px */
+	--space-2: 0.5rem;    /* 8px */
+	--space-3: 0.75rem;   /* 12px */
+	--space-4: 1rem;      /* 16px */
+	--space-5: 1.25rem;   /* 20px */
+	--space-6: 1.5rem;    /* 24px */
+	--space-8: 2rem;      /* 32px */
+	--space-10: 2.5rem;   /* 40px */
+	--space-12: 3rem;     /* 48px */
+	--space-16: 4rem;     /* 64px */
+	--space-20: 5rem;     /* 80px */
+	--space-24: 6rem;     /* 96px */
+	--space-32: 8rem;     /* 128px */
+
+	/* Section spacing — fluid */
+	--section-y: clamp(4rem, 3rem + 5vw, 8rem);
+	--section-x: clamp(1.25rem, 0.5rem + 3.75vw, 7.5rem);
+
+	/* Container */
+	--container-max: 1200px;
+	--container-narrow: 800px;
+	--container-wide: 1400px;
+
+	/* Border Radius */
+	--radius-sm: 0.25rem;  /* 4px */
+	--radius-md: 0.5rem;   /* 8px */
+	--radius-lg: 0.75rem;  /* 12px */
+	--radius-xl: 1rem;     /* 16px */
+	--radius-full: 9999px;
+
+	/* Shadows */
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+	--shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.16);
+	--shadow-brass: 0 4px 20px rgba(var(--color-brass-rgb), 0.25);
+
+	/* Transitions */
+	--transition-fast: 150ms ease;
+	--transition-base: 250ms ease;
+	--transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+	/* Z-index scale */
+	--z-base: 1;
+	--z-dropdown: 100;
+	--z-sticky: 200;
+	--z-overlay: 300;
+	--z-modal: 400;
+	--z-toast: 500;
+}
+
+/* ── Utility Classes ───────────────────────────────────────────── */
+.container {
+	width: 100%;
+	max-width: var(--container-max);
+	margin-inline: auto;
+	padding-inline: var(--section-x);
+}
+
+.container--narrow {
+	max-width: var(--container-narrow);
+}
+
+.container--wide {
+	max-width: var(--container-wide);
+}
+
+.section {
+	padding-block: var(--section-y);
+}
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+/* Skip to content link */
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: var(--space-4);
+	z-index: var(--z-toast);
+	padding: var(--space-3) var(--space-6);
+	background: var(--color-navy);
+	color: var(--color-white);
+	font-weight: 600;
+	border-radius: var(--radius-md);
+	transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+	top: var(--space-4);
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+}
+
+/* Focus visible styles */
+:focus-visible {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+}
+
+/* ── Scroll Reveal Animation ───────────────────────────────────── */
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+		transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 500ms; }
+
+/* ── Print Styles ──────────────────────────────────────────────── */
+@media print {
+	nav,
+	footer,
+	.no-print,
+	button {
+		display: none !important;
+	}
+
+	*,
+	*::before,
+	*::after {
+		background: transparent !important;
+		box-shadow: none !important;
+		color: #000 !important;
+	}
+
+	body {
+		font-size: 12pt;
+		line-height: 1.5;
+	}
+
+	a[href]::after {
+		content: " (" attr(href) ")";
+		font-size: 0.8em;
+	}
+
+	article,
+	section,
+	.card {
+		break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+}

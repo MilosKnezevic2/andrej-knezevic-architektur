@@ -1,0 +1,116 @@
+---
+import '@fontsource/outfit/400.css';
+import '@fontsource/outfit/500.css';
+import '@fontsource/outfit/600.css';
+import '@fontsource/outfit/700.css';
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/700.css';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+	canonical?: string;
+	ogImage?: string;
+	noindex?: boolean;
+}
+
+const {
+	title,
+	description,
+	canonical = Astro.url.href,
+	ogImage = '/og-image.jpg',
+	noindex = false,
+} = Astro.props;
+
+const siteName = 'Andrej Knezevic — Bauingenieurbüro';
+const fullTitle = title === 'Home'
+	? `${siteName} | Tragwerksplanung & Bauleitung`
+	: `${title} | ${siteName}`;
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+		<!-- Primary Meta -->
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		{noindex
+			? <meta name="robots" content="noindex, nofollow" />
+			: <meta name="robots" content="index, follow" />
+		}
+		<meta name="author" content="Andrej Knezevic" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#0C1A2E" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:locale" content="de_AT" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={fullTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- Preconnect (for any external resources) -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+	</head>
+
+	<body>
+		<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+		<slot name="header" />
+
+		<main id="main-content">
+			<slot />
+		</main>
+
+		<slot name="footer" />
+
+		<!-- Scroll Reveal Script -->
+		<script>
+			const observer = new IntersectionObserver(
+				(entries) => {
+					for (const entry of entries) {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('is-visible');
+							observer.unobserve(entry.target);
+						}
+					}
+				},
+				{
+					threshold: 0.1,
+					rootMargin: '0px 0px -40px 0px',
+				}
+			);
+
+			function initReveal() {
+				const elements = document.querySelectorAll('.reveal');
+				for (const el of elements) {
+					observer.observe(el);
+				}
+			}
+
+			// Run on page load
+			initReveal();
+
+			// Run on Astro page transitions (if using View Transitions)
+			document.addEventListener('astro:page-load', initReveal);
+		</script>
+	</body>
+</html>
